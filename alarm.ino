@@ -1,12 +1,6 @@
 #include <SoftwareSerial.h>
 #include <EEPROM.h>
 
-// configure software serial port
-SoftwareSerial SIM900(7, 8);
-
-// Verbose serial output
-int verbose = 1;
-
 // Power SIM900 on
 void SIM900powerOn()
 {
@@ -231,22 +225,24 @@ void SIM900callHome(int n)
   }
 }
 
+// configure software serial port
+SoftwareSerial SIM900(7, 8);
+
+// Verbose serial output
+int verbose = 1;
+
 void setup()
 {
   // Configure serial ports
   Serial.begin(19200);
   SIM900.begin(19200);
   delay(1000);
-
   // Power SIM900 on
   SIM900powerOn();
-
   // Expect a call for 60 seconds
   SIM900expectCall(60);
-
   // Short call back
   SIM900callHome(10);
-
   // Power SIM900 off
   SIM900powerOff(); 
 }
@@ -258,10 +254,8 @@ void loop()
   {
     // Power SIM900 on
     SIM900powerOn();
-
     // Long call back
     SIM900callHome(15);
-
     // Power SIM900 off
     SIM900powerOff(); 
   }
