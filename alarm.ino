@@ -7,13 +7,6 @@ SoftwareSerial SIM900(7, 8);
 // Verbose serial output
 int verbose = 1;
 
-void setup()
-{
-  Serial.begin(19200);
-  SIM900.begin(19200);
-  delay(1000);
-}
-
 // Power SIM900 on
 void SIM900powerOn()
 {
@@ -238,29 +231,38 @@ void SIM900callHome(int n)
   }
 }
 
-void loop()
+void setup()
 {
+  // Configure serial ports
+  Serial.begin(19200);
+  SIM900.begin(19200);
+  delay(1000);
+
   // Power SIM900 on
   SIM900powerOn();
 
   // Expect a call for 60 seconds
   SIM900expectCall(60);
 
-  // Check valid number in memory
-  if(!SIM900lastCall())
-  {
-    // Stop if no number
-    while(1){}
-  }
-
   // Short call back
   SIM900callHome(10);
 
   // Power SIM900 off
-  SIM900powerOff();
- 
-  // Check sensors
-  while(1)
+  SIM900powerOff(); 
+}
+
+void loop()
+{
+  int alarm = 0;
+  if(alarm)
   {
+    // Power SIM900 on
+    SIM900powerOn();
+
+    // Long call back
+    SIM900callHome(15);
+
+    // Power SIM900 off
+    SIM900powerOff(); 
   }
 }
