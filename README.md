@@ -1,5 +1,5 @@
-Phone alarm using Arduino and SIM900 shield
-===========================================
+Phone alarm using Arduino and SIM900
+====================================
 
 Functions to work with Arduino and SIM900 GSM shield as phone alarm.
 
