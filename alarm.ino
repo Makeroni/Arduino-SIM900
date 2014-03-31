@@ -99,7 +99,7 @@ int SIM900ringing()
             return 0;
           }
         }
-        // Write number in EEPROM twice
+        // Store number twice in EEPROM
         for( i=0 ; i<9 ; i++ )
         {
           EEPROM.write(i  , msg[18+i]);
@@ -143,7 +143,7 @@ int SIM900expectCall(int n)
   return 0;
 }
 
-// Check last call in EEPROM
+// Check last stored call in EEPROM
 int SIM900lastCall()
 {
   char phone[9];
@@ -241,7 +241,7 @@ void setup()
   SIM900powerOn();
   // Expect a call for 60 seconds
   SIM900expectCall(60);
-  // Short call back
+  // Short call back confirmation
   SIM900callHome(10);
   // Power SIM900 off
   SIM900powerOff(); 
@@ -254,7 +254,7 @@ void loop()
   {
     // Power SIM900 on
     SIM900powerOn();
-    // Long call back
+    // Long call back alarm
     SIM900callHome(15);
     // Power SIM900 off
     SIM900powerOff(); 
