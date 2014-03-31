@@ -9,10 +9,10 @@ SIM900powerOn();
 
 // Expect a call for n seconds
 // Store phone number (EEPROM)
-SIM900expectCall(n);
+SIM900expectCall(int n);
 
 // Call back during n seconds
-SIM900callHome(n);
+SIM900callHome(int n);
 
 // Power SIM900 off
 SIM900powerOff();
