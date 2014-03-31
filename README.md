@@ -18,6 +18,9 @@ SIM900callHome(int n);
 SIM900powerOff();
 ```
 
+Localization
+------------
+
 Phone number is checked according to spanish telephone numbering (6 or 9 at the start).
 
 Replace your country codes in the corresponding sentences:
@@ -28,7 +31,7 @@ Replace your country codes in the corresponding sentences:
 if( msg[18] != '6' && msg[18] != '9' )
 ````
 
-and the international prefix in the call back function:
+and replace the international prefix in the call back function:
 
 ````C
 // Add spain country code
