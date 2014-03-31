@@ -34,7 +34,7 @@ if( msg[18] != '6' && msg[18] != '9' )
 and replace the international prefix in the call back function:
 
 ````C
-// Add spain country code
+// Add Spain country code
 sprintf(msg, "ATD + +34%s;", phone);
 ````
 
