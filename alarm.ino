@@ -220,6 +220,7 @@ void SIM900callHome(int n)
     }
     // Add end of string character
     phone[9] = '\0';
+    // Add Spain country code
     sprintf(msg, "ATD + +34%s;", phone);
     // Dial
     SIM900.println(msg);
