@@ -23,14 +23,14 @@ Localization
 
 Phone number is checked according to spanish telephone numbering (6 or 9 at the start).
 
-1. Replace your country codes in the corresponding sentences:
+Replace your country codes in the corresponding sentences:
 
 ````C
 // Check number starts with 6 or 9
 if( msg[18] != '6' && msg[18] != '9' )
 ````
 
-2. Replace the international prefix in the call back function:
+Replace the international prefix in the call back function:
 
 ````C
 // Add Spain country code
