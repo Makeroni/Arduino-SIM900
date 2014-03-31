@@ -24,7 +24,15 @@ Replace your country codes in the corresponding sentences:
 
 ````C
 // Check number starts with 6 or 9
+// according to spanish numbering
 if( msg[18] != '6' && msg[18] != '9' )
+````
+
+and the international prefix in the call back function:
+
+````C
+// Add spain country code
+sprintf(msg, "ATD + +34%s;", phone);
 ````
 
 Copyright and license
