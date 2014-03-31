@@ -27,7 +27,6 @@ Replace your country codes in the corresponding sentences:
 
 ````C
 // Check number starts with 6 or 9
-// according to spanish numbering
 if( msg[18] != '6' && msg[18] != '9' )
 ````
 
@@ -37,6 +36,13 @@ and replace the international prefix in the call back function:
 // Add Spain country code
 sprintf(msg, "ATD + +34%s;", phone);
 ````
+
+
+Any problems?
+-------------
+Feel free to [write an issue](https://github.com/Makeroni/Arduino-SIM900/issues) if you have any questions or problems.
+
+
 
 Copyright and license
 ---------------------
