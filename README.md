@@ -30,7 +30,7 @@ Replace your country codes in the corresponding sentences:
 if( msg[18] != '6' && msg[18] != '9' )
 ````
 
-and replace the international prefix in the call back function:
+Replace the international prefix in the call back function:
 
 ````C
 // Add Spain country code
