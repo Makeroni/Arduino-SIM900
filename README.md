@@ -8,7 +8,7 @@ Functions to work with Arduino and SIM900 GSM shield as phone alarm.
 SIM900powerOn();
 
 // Expect a call for n seconds
-// Store phone number (EEPROM)
+// Store phone number in EEPROM
 SIM900expectCall(int n);
 
 // Call back during n seconds
