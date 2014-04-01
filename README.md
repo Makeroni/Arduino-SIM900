@@ -27,7 +27,7 @@ Replace your country codes in the corresponding sentences:
 
 ````C
 // Check number starts with 6 or 9
-if( msg[18] != '6' && msg[18] != '9' )
+if( phone[0] != '6' && phone[0] != '9' )
 ````
 
 Replace the international prefix in the call back function:
